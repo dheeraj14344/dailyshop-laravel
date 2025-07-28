@@ -12,14 +12,14 @@
       <div class="col-md-6">
         <h4 class="text-info my-2">Update Order Status</h4>
         <select class="form-control" id="order_status" onchange="update_order_status('{{$orders_details[0]->id}}')">
-          <?php 
+          <?php
           foreach ($orders_status as $list) {
             if ($orders_details[0]->order_status==$list->id) {
               ?><option value="<?php echo $list->id; ?>" selected><?php echo $list->orders_status; ?></option><?php
             }else{
               ?><option value="<?php echo $list->id; ?>"><?php echo $list->orders_status; ?></option><?php
             }
-            
+
           }
            ?>
         </select>
@@ -27,7 +27,7 @@
       <div class="col-md-6">
         <h4 class="text-info my-2">Update Payment Status</h4>
         <select class="form-control" id="payment_status" onchange="update_payment_status('{{$orders_details[0]->id}}')">
-          <?php 
+          <?php
           foreach ($payment_status as $list) {
 
             if ($orders_details[0]->payment_status==$list) {
@@ -36,7 +36,7 @@
             }else{
               ?><option value="<?php echo $list; ?>"><?php echo $list; ?></option><?PHP
             }
-            
+
           }
 
            ?>
@@ -64,11 +64,11 @@
   </div>
 </section>
 &nbsp
-                      
+
 <section id="cart-view">
    <div class="container bg-white py-2">
      <div class="row ">
-      <!--  View details --> 
+      <!--  View details -->
       <div class="col-md-6">
         <table cellpadding="10px" width="80%">
             <thead>
@@ -116,7 +116,7 @@
                 <td class="orders_detail">Payment Type : </td>
                 <td>{{$orders_details[0]->payment_type}}</td>
               </tr>
-              <?php 
+              <?php
               if ($orders_details[0]->payment_id!='') {
               echo "<tr>
                   <td class='orders_detail'>Payment ID : </td>
@@ -125,10 +125,10 @@
               }
               ?>
             </tbody>
-          </table> 
+          </table>
       </div>
 
-    <!--  Product details --> 
+    <!--  Product details -->
        <div class="col-md-12 py-2 bg-white">
          <div class="cart-view-area">
            <div class="cart-view-table">
@@ -162,7 +162,7 @@
                          <td>{{$list->price*$list->qty}}</td>
                        </tr>
                        @endforeach
-                       <?php 
+                       <?php
                        echo '<tr class="txt_style">
                                <td colspan="5">&nbsp</td>
                                <td style="font-weight:bold">Total Ammount : </td>
@@ -182,7 +182,7 @@
                                <td style="font-weight:bold">'.$totalAmt.'</td>
                             </tr>';
                           }
-                          
+
                         ?>
                     </tbody>
                   </table>
